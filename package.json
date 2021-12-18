@@ -1,0 +1,30 @@
+{
+  "name": "app-basic",
+  "version": "1.0.0",
+  "description": "this package is to run the app and server with same command",
+  "main": "index.js",
+  "scripts": {
+    "server": "yarn --cwd server start",
+    "mobile": "yarn --cwd mobile android",
+    "start": "concurrently \"yarn server\" \"yarn mobile\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anirban00537/taskiMobile.git"
+  },
+  "keywords": [
+    "taski",
+    "productivity",
+    "health",
+    "app"
+  ],
+  "author": "Anirban roy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/anirban00537/taskiMobile/issues"
+  },
+  "homepage": "https://github.com/anirban00537/taskiMobile#readme",
+  "dependencies": {
+    "concurrently": "^6.5.0"
+  }
+}
