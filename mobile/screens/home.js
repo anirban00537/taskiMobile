@@ -1,52 +1,77 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Button, Card, Layout, Text} from '@ui-kitten/components';
-const Header = props => (
-  <View {...props}>
-    <Text category="h6">Maldives</Text>
-    <Text category="s1">By Wikipedia</Text>
-  </View>
-);
-
-const Footer = props => (
-  <View {...props} style={[props.style, styles.footerContainer]}>
-    <Button style={styles.footerControl} size="small" status="basic">
-      CANCEL
-    </Button>
-    <Button style={styles.footerControl} size="small">
-      ACCEPT
-    </Button>
-  </View>
-);
+import {StyleSheet, View, ScrollView} from 'react-native';
+import {Layout, Text, Icon} from '@ui-kitten/components';
+import Card from '../components/home/card';
 const home = () => {
   return (
-    <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Card style={styles.card} header={Header}>
-        <Text>With Header</Text>
-      </Card>
-
-      <Card style={styles.card} footer={Footer}>
-        <Text>With Footer</Text>
-      </Card>
-    </Layout>
+    <>
+      <Layout style={styles.container}>
+        <Layout style={styles.topContainer}>
+          <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+            <View style={styles.topItemActive}>
+              <Text style={styles.tapText}>Reading</Text>
+            </View>
+            <View style={styles.topItem}>
+              <Text style={styles.tapText}>School and art</Text>
+            </View>
+            <View style={styles.topItem}>
+              <Text style={styles.tapText}>Pornog</Text>
+            </View>
+          </ScrollView>
+        </Layout>
+        <Layout style={styles.layoutTwo}>
+          <Icon name="settings" width={24} height={24} fill={'#a4b0be'} />
+        </Layout>
+      </Layout>
+      {/* card with header */}
+      <ScrollView>
+        <Card />
+        <Card />
+      </ScrollView>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    height: 60,
+  },
   topContainer: {
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    flexBasis: '85%',
     flexDirection: 'row',
-    justifyContent: 'space-between',
   },
-  card: {
-    flex: 1,
-    margin: 2,
+  layoutTwo: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    flexBasis: '15%',
   },
-  footerContainer: {
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
+  topItem: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexBasis: '85%',
+    backgroundColor: '#7bed9f',
+    minWidth: 50,
+    borderRadius: 10,
+    padding: 7,
+    marginLeft: 10,
   },
-  footerControl: {
-    marginHorizontal: 2,
+  topItemActive: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexBasis: '85%',
+    backgroundColor: '#2ed573',
+    minWidth: 50,
+    borderRadius: 10,
+    padding: 7,
+    marginLeft: 10,
+  },
+  tapText: {
+    color: '#fff',
+    fontSize: 12,
   },
 });
 export default home;

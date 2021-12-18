@@ -26,7 +26,7 @@ export default function TabNavigation() {
               name="home-outline"
               width={24}
               height={24}
-              fill={focused ? '#f00' : '#000'}
+              fill={focused ? '#5352ed' : '#000'}
             />
           ),
         }}
@@ -41,7 +41,7 @@ export default function TabNavigation() {
               name="calendar-outline"
               width={24}
               height={24}
-              fill={focused ? '#f00' : '#000'}
+              fill={focused ? '#5352ed' : '#000'}
             />
           ),
         }}
@@ -56,7 +56,7 @@ export default function TabNavigation() {
               name="person-outline"
               width={24}
               height={24}
-              fill={focused ? '#f00' : '#000'}
+              fill={focused ? '#5352ed' : '#000'}
             />
           ),
         }}
