@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleSheet, View, ScrollView} from 'react-native';
 import {Layout, Text, Icon} from '@ui-kitten/components';
 import Card from '../components/home/card';
-const home = () => {
+const home = ({navigation}) => {
   return (
     <>
       <Layout style={styles.container}>
@@ -25,8 +25,8 @@ const home = () => {
       </Layout>
       {/* card with header */}
       <ScrollView>
-        <Card />
-        <Card />
+        <Card navigation={navigation} />
+        <Card navigation={navigation} />
       </ScrollView>
     </>
   );

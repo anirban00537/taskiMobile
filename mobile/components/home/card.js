@@ -1,11 +1,21 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {Button, Card, Layout, Text} from '@ui-kitten/components';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
+import {Icon, Card, Layout, Text} from '@ui-kitten/components';
 
-const card = () => {
+const card = ({navigation}) => {
   return (
-    <Card style={styles.card}>
-      <Text>With Header</Text>
+    <Card onPress={() => navigation.navigate('Details')}>
+      <View style={styles.cardContainerRow}>
+        <Text>With Header</Text>
+        <View>
+          <Icon
+            name="arrow-ios-forward-outline"
+            width={24}
+            height={24}
+            fill={'#a4b0be'}
+          />
+        </View>
+      </View>
     </Card>
   );
 };
@@ -13,16 +23,14 @@ const card = () => {
 export default card;
 
 const styles = StyleSheet.create({
-  topContainer: {
+  cardContainerRow: {
     flexDirection: 'row',
+    alignItems: 'center',
     justifyContent: 'space-between',
   },
-  layout: {
-    flex: 1,
-    justifyContent: 'center',
-  },
-  card: {
-    flex: 1,
+  cardBtn: {
     margin: 8,
+    backgroundColor: '#7bed9f',
+    borderColor: '#7bed9f',
   },
 });
