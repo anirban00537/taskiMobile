@@ -3,7 +3,6 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Home from '../screens/home';
 import Profile from '../screens/profile';
 import Calender from '../screens/calender';
-import Details from '../screens/details';
 import {Button, Icon} from '@ui-kitten/components';
 
 const Tab = createBottomTabNavigator();
@@ -27,7 +26,7 @@ export default function TabNavigation() {
               name="home-outline"
               width={24}
               height={24}
-              fill={focused ? '#5352ed' : '#000'}
+              fill={focused ? '#7bed9f' : '#000'}
             />
           ),
         }}
@@ -42,7 +41,7 @@ export default function TabNavigation() {
               name="calendar-outline"
               width={24}
               height={24}
-              fill={focused ? '#5352ed' : '#000'}
+              fill={focused ? '#7bed9f' : '#000'}
             />
           ),
         }}
@@ -57,23 +56,7 @@ export default function TabNavigation() {
               name="person-outline"
               width={24}
               height={24}
-              fill={focused ? '#5352ed' : '#000'}
-            />
-          ),
-        }}
-      />
-
-      <Tab.Screen
-        name="Details"
-        component={Details}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => (
-            <Icon
-              name="person-outline"
-              width={24}
-              height={24}
-              fill={focused ? '#5352ed' : '#000'}
+              fill={focused ? '#7bed9f' : '#000'}
             />
           ),
         }}
