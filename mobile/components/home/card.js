@@ -1,6 +1,6 @@
 import React from 'react';
-import {StyleSheet, TouchableOpacity, View} from 'react-native';
-import {Icon, Card, Layout, Text} from '@ui-kitten/components';
+import {StyleSheet, View} from 'react-native';
+import {Icon, Card, Text} from '@ui-kitten/components';
 
 const card = ({navigation}) => {
   return (
