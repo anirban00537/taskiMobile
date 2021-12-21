@@ -6,6 +6,7 @@ const details = ({navigation}) => {
   return (
     <Layout style={styles.topContainer} level="1">
       <Card style={styles.card}>
+        <Text category="h6">Card with Header</Text>
         <Text style={styles.detaile}>
           The Maldives, officially the Republic of Maldives, is a small country
           in South Asia, located in the Arabian Sea of the Indian Ocean. It lies
