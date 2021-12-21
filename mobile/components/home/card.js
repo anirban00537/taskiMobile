@@ -8,9 +8,7 @@ const card = ({navigation, index}) => {
     description:
       'loream ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.',
   };
-  {
-    /* render 40 words */
-  }
+
   const renderTenWords = () => {
     const words = textJson.description.split(' ');
     const words40 = words.slice(0, 10);
@@ -52,9 +50,9 @@ const styles = StyleSheet.create({
     borderColor: '#7bed9f',
   },
   card: {
-    margin: 3,
-    marginTop: 4,
-    borderRadius: 4,
+    marginHorizontal: 12,
+    marginVertical: 6,
+    borderRadius: 8,
     borderWidth: 1,
     shadowColor: '#a4b0be',
     shadowOffset: {
