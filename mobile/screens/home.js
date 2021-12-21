@@ -25,8 +25,8 @@ const home = ({navigation}) => {
       </Layout>
       {/* card with header */}
       <ScrollView>
-        <Card navigation={navigation} />
-        <Card navigation={navigation} />
+        <Card navigation={navigation} index={1} />
+        <Card navigation={navigation} index={2} />
       </ScrollView>
     </>
   );
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexBasis: '85%',
-    backgroundColor: '#7bed9f',
+    backgroundColor: '#5352ed',
     minWidth: 50,
     borderRadius: 10,
     padding: 7,
@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexBasis: '85%',
-    backgroundColor: '#2ed573',
+    backgroundColor: '#5370ed',
     minWidth: 50,
     borderRadius: 10,
     padding: 7,
