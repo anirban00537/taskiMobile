@@ -22,6 +22,11 @@ const card = ({navigation, index}) => {
         <View style={styles.cardContainerColumn}>
           <Text>{textJson.title}</Text>
           <Text style={styles.cardListDetailsText}>{renderTenWords()}</Text>
+
+          <View style={styles.cardListDetailsTime}>
+            <Icon name="clock-outline" width={10} height={10} fill="#2ed573" />
+            <Text style={styles.cardListDetailsTimeText}> 12:00</Text>
+          </View>
         </View>
         <View>
           <Icon
@@ -71,10 +76,18 @@ const styles = StyleSheet.create({
   cardListDetailsText: {
     fontSize: 12,
     color: '#a4b0be',
-    // only one line of text
     textOverflow: 'ellipsis',
     overflow: 'hidden',
     whiteSpace: 'nowrap',
     width: '100%',
+  },
+  cardListDetailsTime: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 5,
+  },
+  cardListDetailsTimeText: {
+    color: '#2ed573',
+    fontSize: 12,
   },
 });
