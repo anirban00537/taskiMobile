@@ -1,10 +1,35 @@
 import React from 'react';
 import {StyleSheet, ScrollView} from 'react-native';
-import {Layout, Icon} from '@ui-kitten/components';
+import {
+  Layout,
+  Icon,
+  Avatar,
+  MenuItem,
+  OverflowMenu,
+  Text,
+  TopNavigation,
+  TopNavigationAction,
+  Button,
+} from '@ui-kitten/components';
 import Card from '../components/home/card';
 import NavItem from '../components/home/NavItem';
 
 const home = ({navigation}) => {
+  const [selectedIndex, setSelectedIndex] = React.useState(null);
+  const [visible, setVisible] = React.useState(false);
+  const onItemSelect = index => {
+    setSelectedIndex(index);
+    setVisible(false);
+  };
+  const renderToggleButton = () => (
+    <Icon
+      onPress={() => setVisible(true)}
+      name="more-vertical-outline"
+      width={24}
+      height={24}
+      fill={'#a4b0be'}
+    />
+  );
   return (
     <>
       <Layout style={styles.container}>
@@ -18,12 +43,17 @@ const home = ({navigation}) => {
           </ScrollView>
         </Layout>
         <Layout style={styles.layoutTwo}>
-          <Icon
-            name="more-vertical-outline"
-            width={24}
-            height={24}
-            fill={'#a4b0be'}
-          />
+          <OverflowMenu
+            appearance="noDivider"
+            anchor={renderToggleButton}
+            visible={visible}
+            selectedIndex={selectedIndex}
+            onSelect={onItemSelect}
+            onBackdropPress={() => setVisible(false)}>
+            <MenuItem title="Users" />
+            <MenuItem title="Orders" />
+            <MenuItem title="Transactions" />
+          </OverflowMenu>
         </Layout>
       </Layout>
       {/* card with header */}
