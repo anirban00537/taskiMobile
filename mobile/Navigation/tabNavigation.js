@@ -1,66 +1,71 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {
+  BottomNavigation,
+  BottomNavigationTab,
+  Icon,
+  Button,
+} from '@ui-kitten/components';
+
 import Home from '../screens/home';
 import Profile from '../screens/profile';
 import Calender from '../screens/calender';
-import {Button, Icon} from '@ui-kitten/components';
 
-const Tab = createBottomTabNavigator();
+const {Navigator, Screen} = createBottomTabNavigator();
 
-export default function TabNavigation() {
+const TabNavigator = () => (
+  <Navigator tabBar={props => <BottomTabBar {...props} />}>
+    <Screen
+      name="Users"
+      component={Home}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Screen
+      name="Calender"
+      component={Calender}
+      options={{
+        headerShown: false,
+      }}
+    />
+    <Screen
+      name="Orders"
+      component={Profile}
+      options={{
+        headerShown: false,
+      }}
+    />
+  </Navigator>
+);
+
+const BottomTabBar = ({navigation, state}) => {
+  const onSelect = index => {
+    navigation.navigate(state.routeNames[index]);
+  };
+  // #a4b0be tintColor activeColor
+  const selectedIndex = state.index;
+
   return (
-    //tab bar lebel null
-    <Tab.Navigator
-      tabBarOptions={{
-        tabBarLabel: null,
-        activeTintColor: '#fff',
-        inactiveTintColor: '#fff',
-      }}>
-      <Tab.Screen
-        name="Home"
-        component={Home}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => (
-            <Icon
-              name="home-outline"
-              width={24}
-              height={24}
-              fill={focused ? '#7bed9f' : '#000'}
-            />
-          ),
-        }}
+    <BottomNavigation
+      selectedIndex={selectedIndex}
+      onSelect={onSelect}
+      appearance="noIndicator"
+      indicatorAppearance="noIndicator">
+      <BottomNavigationTab
+        title="Home"
+        icon={props => <Icon {...props} name="home-outline" />}
       />
-      <Tab.Screen
-        name="Calender"
-        component={Calender}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => (
-            <Icon
-              name="calendar-outline"
-              width={24}
-              height={24}
-              fill={focused ? '#7bed9f' : '#000'}
-            />
-          ),
-        }}
+      <BottomNavigationTab
+        title="Calender"
+        icon={props => <Icon {...props} name="calendar-outline" />}
       />
-      <Tab.Screen
-        name="Profile"
-        component={Profile}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => (
-            <Icon
-              name="person-outline"
-              width={24}
-              height={24}
-              fill={focused ? '#7bed9f' : '#000'}
-            />
-          ),
-        }}
+      <BottomNavigationTab
+        title="Profile"
+        icon={props => <Icon {...props} name="person-outline" />}
       />
-    </Tab.Navigator>
+    </BottomNavigation>
   );
-}
+};
+
+export default TabNavigator;

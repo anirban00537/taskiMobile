@@ -21,6 +21,7 @@ export default function StackNavigation() {
           name="Details"
           component={Details}
           options={{
+            headerShown: false,
             tabBarIcon: ({focused}) => (
               <Icon
                 name="person-outline"

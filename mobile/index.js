@@ -5,8 +5,7 @@ import * as eva from '@eva-design/eva';
 import {
   ApplicationProvider,
   IconRegistry,
-  Layout,
-  Text,
+  useTheme,
 } from '@ui-kitten/components';
 import {EvaIconsPack} from '@ui-kitten/eva-icons';
 
@@ -14,16 +13,10 @@ import App from './App';
 import 'react-native-gesture-handler';
 
 export default function Main() {
-  // dark theme
-  const theme = {
-    ...eva.light,
-    ...eva.dark,
-  };
-
   return (
     <>
       <IconRegistry icons={EvaIconsPack} />
-      <ApplicationProvider {...eva} theme={eva.dark}>
+      <ApplicationProvider {...eva} theme={{...eva.dark}}>
         <App />
       </ApplicationProvider>
     </>
