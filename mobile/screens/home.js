@@ -31,7 +31,7 @@ const home = ({navigation}) => {
     />
   );
   return (
-    <>
+    <Layout style={styles.basecontainer}>
       <Layout style={styles.container}>
         <Layout style={styles.topContainer}>
           <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
@@ -61,11 +61,14 @@ const home = ({navigation}) => {
         <Card navigation={navigation} index={1} />
         <Card navigation={navigation} index={2} />
       </ScrollView>
-    </>
+    </Layout>
   );
 };
 
 const styles = StyleSheet.create({
+  basecontainer: {
+    flex: 1,
+  },
   container: {
     flexDirection: 'row',
     height: 60,
@@ -87,7 +90,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexBasis: '85%',
-    backgroundColor: '#5352ed',
+    // backgroundColor: '#5352ed',
     minWidth: 50,
     borderRadius: 10,
     padding: 7,
@@ -97,7 +100,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexBasis: '85%',
-    backgroundColor: '#5370ed',
+    // backgroundColor: '#5370ed',
     minWidth: 50,
     borderRadius: 10,
     padding: 7,

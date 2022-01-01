@@ -4,7 +4,7 @@ import {Button, Card, Layout, Text} from '@ui-kitten/components';
 
 const details = ({navigation}) => {
   return (
-    <Layout style={styles.topContainer} level="1">
+    <Layout style={styles.topContainer}>
       <Card style={styles.card}>
         <Text category="h6">Card with Header</Text>
         <Text style={styles.detaile}>
@@ -38,8 +38,8 @@ const styles = StyleSheet.create({
   topContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    backgroundColor: '#f0f0f0',
-    borderRadius: 10,
+    height: '100%',
+    // backgroundColor: '#f0f0f0',
   },
   card: {
     flex: 1,

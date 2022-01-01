@@ -4,7 +4,7 @@ import {Icon, Card, Text} from '@ui-kitten/components';
 
 const card = ({navigation, index}) => {
   const textJson = {
-    title: 'Прочитано',
+    title: 'This is a title',
     description:
       'loream ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.',
   };
@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
   },
   cardBtn: {
     margin: 8,
-    backgroundColor: '#7bed9f',
+    // backgroundColor: '#7bed9f',
     borderColor: '#7bed9f',
   },
   card: {

@@ -28,16 +28,16 @@ const calender = ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     height: '100%',
   },
   topContainer: {
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     width: '100%',
     height: '60%',
   },
   layoutTwo: {
-    backgroundColor: '#fff',
+    // backgroundColor: '#fff',
     alignItems: 'flex-start',
     justifyContent: 'flex-start',
   },

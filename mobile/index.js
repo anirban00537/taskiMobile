@@ -14,10 +14,16 @@ import App from './App';
 import 'react-native-gesture-handler';
 
 export default function Main() {
+  // dark theme
+  const theme = {
+    ...eva.light,
+    ...eva.dark,
+  };
+
   return (
     <>
       <IconRegistry icons={EvaIconsPack} />
-      <ApplicationProvider {...eva} theme={eva.light}>
+      <ApplicationProvider {...eva} theme={eva.dark}>
         <App />
       </ApplicationProvider>
     </>
