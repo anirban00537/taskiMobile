@@ -33,7 +33,7 @@ const card = ({navigation, index}) => {
             name="arrow-ios-forward-outline"
             width={24}
             height={24}
-            fill={'#a4b0be'}
+            fill={'#a4b0be '}
           />
         </View>
       </View>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     marginVertical: 6,
     borderRadius: 8,
     borderWidth: 1,
-    shadowColor: '#a4b0be',
+    shadowColor: '#a4b0be ',
     shadowOffset: {
       width: 0,
       height: 2,

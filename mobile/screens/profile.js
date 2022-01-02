@@ -1,5 +1,7 @@
 import React, {useEffect} from 'react';
 import {Layout, Text} from '@ui-kitten/components';
+import {StyleSheet} from 'react-native';
+import TopProfile from '../components/profile/topProfile';
 import axios from 'axios';
 const profile = () => {
   const getdata = async () => {
@@ -12,10 +14,17 @@ const profile = () => {
     getdata();
   }, []);
   return (
-    <Layout style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-      <Text category="h1">profile</Text>
+    <Layout style={styles.container}>
+      <TopProfile />
     </Layout>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 10,
+  },
+});
 
 export default profile;

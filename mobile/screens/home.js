@@ -27,7 +27,7 @@ const home = ({navigation}) => {
       name="more-vertical-outline"
       width={24}
       height={24}
-      fill={'#a4b0be'}
+      fill={'#a4b0be '}
     />
   );
   return (

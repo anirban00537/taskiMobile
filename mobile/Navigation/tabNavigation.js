@@ -43,7 +43,7 @@ const BottomTabBar = ({navigation, state}) => {
   const onSelect = index => {
     navigation.navigate(state.routeNames[index]);
   };
-  // #a4b0be tintColor activeColor
+  // #a4b0be  tintColor activeColor
   const selectedIndex = state.index;
 
   return (

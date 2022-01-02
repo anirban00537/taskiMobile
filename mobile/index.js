@@ -2,11 +2,7 @@ import * as React from 'react';
 import {AppRegistry} from 'react-native';
 import {name as appName} from './app.json';
 import * as eva from '@eva-design/eva';
-import {
-  ApplicationProvider,
-  IconRegistry,
-  useTheme,
-} from '@ui-kitten/components';
+import {ApplicationProvider, IconRegistry} from '@ui-kitten/components';
 import {EvaIconsPack} from '@ui-kitten/eva-icons';
 
 import App from './App';
