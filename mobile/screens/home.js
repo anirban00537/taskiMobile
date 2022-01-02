@@ -1,16 +1,6 @@
 import React from 'react';
 import {StyleSheet, ScrollView} from 'react-native';
-import {
-  Layout,
-  Icon,
-  Avatar,
-  MenuItem,
-  OverflowMenu,
-  Text,
-  TopNavigation,
-  TopNavigationAction,
-  Button,
-} from '@ui-kitten/components';
+import {Layout, Icon, MenuItem, OverflowMenu} from '@ui-kitten/components';
 import Card from '../components/home/card';
 import NavItem from '../components/home/NavItem';
 
@@ -27,7 +17,7 @@ const home = ({navigation}) => {
       name="more-vertical-outline"
       width={24}
       height={24}
-      fill={'#a4b0be '}
+      fill={'#a4b0be'}
     />
   );
   return (
@@ -50,13 +40,11 @@ const home = ({navigation}) => {
             selectedIndex={selectedIndex}
             onSelect={onItemSelect}
             onBackdropPress={() => setVisible(false)}>
-            <MenuItem title="Users" />
-            <MenuItem title="Orders" />
-            <MenuItem title="Transactions" />
+            <MenuItem title="Add catagory" />
+            <MenuItem title="All catagory" />
           </OverflowMenu>
         </Layout>
       </Layout>
-      {/* card with header */}
       <ScrollView>
         <Card navigation={navigation} index={1} />
         <Card navigation={navigation} index={2} />
@@ -100,7 +88,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexBasis: '85%',
-    // backgroundColor: '#5370ed',
     minWidth: 50,
     borderRadius: 10,
     padding: 7,
