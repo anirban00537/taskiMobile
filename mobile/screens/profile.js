@@ -3,15 +3,19 @@ import {Layout, Text} from '@ui-kitten/components';
 import {StyleSheet, ScrollView} from 'react-native';
 import TopProfile from '../components/profile/topProfile';
 import ContributionChart from '../components/profile/contributionChart';
+import TotalTasksChartSummary from '../components/profile/totalTasksChartSummary';
 
 const profile = () => {
   return (
     <Layout style={styles.container}>
       <ScrollView>
         <TopProfile />
-        <Text style={styles.AcitivityText}>Activity Chart</Text>
+
         <Layout style={styles.layoutTwo}>
+          <Text style={styles.AcitivityText}>Activity Chart</Text>
           <ContributionChart />
+          <Text style={styles.AcitivityText}>Total task chart</Text>
+          <TotalTasksChartSummary />
         </Layout>
       </ScrollView>
     </Layout>
