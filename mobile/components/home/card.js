@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet, View, TouchableOpacity} from 'react-native';
 import {Icon, Card, Text} from '@ui-kitten/components';
 
 const card = ({navigation, index}) => {
@@ -17,14 +17,16 @@ const card = ({navigation, index}) => {
   };
 
   return (
-    <Card style={styles.card} onPress={() => navigation.navigate('Details')}>
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => navigation.navigate('Details')}>
       <View style={styles.cardContainerRow}>
         <View style={styles.cardContainerColumn}>
           <Text>{textJson.title}</Text>
           <Text style={styles.cardListDetailsText}>{renderTenWords()}</Text>
 
           <View style={styles.cardListDetailsTime}>
-            <Icon name="clock-outline" width={10} height={10} fill="#2ed573" />
+            <Icon name="clock-outline" width={10} height={10} fill="#5352ed" />
             <Text style={styles.cardListDetailsTimeText}> 12:00</Text>
           </View>
         </View>
@@ -37,7 +39,7 @@ const card = ({navigation, index}) => {
           />
         </View>
       </View>
-    </Card>
+    </TouchableOpacity>
   );
 };
 
@@ -51,22 +53,16 @@ const styles = StyleSheet.create({
   },
   cardBtn: {
     margin: 8,
-    // backgroundColor: '#7bed9f',
-    borderColor: '#7bed9f',
   },
   card: {
-    marginHorizontal: 12,
-    marginVertical: 6,
-    borderRadius: 8,
-    borderWidth: 1,
-    shadowColor: '#a4b0be ',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
+    marginTop: 5,
+    marginBottom: 5,
+    marginLeft: 10,
+    marginRight: 10,
+    borderRadius: 5,
+    paddingVertical: 5,
+    paddingHorizontal: 10,
+    backgroundColor: '#2E3A59',
   },
   cardContainerColumn: {
     flex: 1,
@@ -87,7 +83,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   cardListDetailsTimeText: {
-    color: '#2ed573',
+    color: '#5352ed',
     fontSize: 12,
   },
 });

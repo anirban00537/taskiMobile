@@ -1,6 +1,12 @@
 import React from 'react';
 import {StyleSheet, ScrollView} from 'react-native';
-import {Layout, Icon, MenuItem, OverflowMenu} from '@ui-kitten/components';
+import {
+  Layout,
+  Icon,
+  MenuItem,
+  OverflowMenu,
+  Button,
+} from '@ui-kitten/components';
 import Card from '../components/home/card';
 import NavItem from '../components/home/NavItem';
 
@@ -45,10 +51,25 @@ const home = ({navigation}) => {
           </OverflowMenu>
         </Layout>
       </Layout>
+
       <ScrollView>
         <Card navigation={navigation} index={1} />
         <Card navigation={navigation} index={2} />
+        <Card navigation={navigation} index={2} />
+
+        <Card navigation={navigation} index={2} />
+
+        <Card navigation={navigation} index={2} />
+
+        <Card navigation={navigation} index={2} />
+
+        <Card navigation={navigation} index={2} />
+
+        <Card navigation={navigation} index={2} />
       </ScrollView>
+      <Button style={styles.floatingButton}>
+        <Icon name="plus-outline" width={24} height={24} fill="#a4b0be" />
+      </Button>
     </Layout>
   );
 };
@@ -96,6 +117,17 @@ const styles = StyleSheet.create({
   tapText: {
     color: '#fff',
     fontSize: 12,
+  },
+  floatingButton: {
+    position: 'absolute',
+    width: 60,
+    height: 60,
+    alignItems: 'center',
+    justifyContent: 'center',
+    right: 30,
+    bottom: 30,
+    backgroundColor: '#5352ed',
+    borderRadius: 30,
   },
 });
 export default home;

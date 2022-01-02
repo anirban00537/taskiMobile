@@ -1,29 +1,19 @@
 import {Icon, Button} from '@ui-kitten/components';
 import React from 'react';
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
 const NavItem = ({title}) => {
-  const infiniteAnimationIconRef = React.useRef();
-  const renderInfiniteAnimationIcon = props => (
-    <Icon
-      {...props}
-      ref={infiniteAnimationIconRef}
-      animationConfig={{cycles: Infinity}}
-      animation="shake"
-      name="clock-outline"
-    />
-  );
-
   return (
-    <Button
-      appearance="ghost"
-      size="small"
-      status="success"
-      style={styles.button}
-      accessoryLeft={renderInfiniteAnimationIcon}
-      onPress={() => infiniteAnimationIconRef.current.startAnimation()}>
-      {title}
-    </Button>
+    <TouchableOpacity style={styles.button}>
+      <Icon
+        name="grid-outline"
+        width={14}
+        height={14}
+        fill={'#a4b0be'}
+        style={styles.icon}
+      />
+      <Text style={styles.text}>{title}</Text>
+    </TouchableOpacity>
   );
 };
 
@@ -35,11 +25,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     flex: 1,
-    color: '#fff',
+    borderRadius: 10,
+    padding: 2,
   },
   pulseIcon: {
     width: 14,
     height: 14,
+  },
+  text: {
+    fontSize: 12,
+    color: '#a4b0be',
+  },
+  icon: {
+    marginRight: 5,
   },
 });
 
