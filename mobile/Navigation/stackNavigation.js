@@ -3,6 +3,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import TabNavigation from './tabNavigation';
 import Details from '../screens/details';
+import AddCatagory from '../screens/addCatagory';
 
 const Stack = createNativeStackNavigator();
 
@@ -25,6 +26,21 @@ export default function StackNavigation() {
             tabBarIcon: ({focused}) => (
               <Icon
                 name="person-outline"
+                width={24}
+                height={24}
+                fill={focused ? '#5352ed' : '#000'}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="AddCatagory"
+          component={AddCatagory}
+          options={{
+            headerShown: false,
+            tabBarIcon: ({focused}) => (
+              <Icon
+                name="plus-outline"
                 width={24}
                 height={24}
                 fill={focused ? '#5352ed' : '#000'}

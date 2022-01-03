@@ -46,7 +46,10 @@ const home = ({navigation}) => {
             selectedIndex={selectedIndex}
             onSelect={onItemSelect}
             onBackdropPress={() => setVisible(false)}>
-            <MenuItem title="Add catagory" />
+            <MenuItem
+              title="Add catagory"
+              onPress={() => navigation.navigate('AddCatagory')}
+            />
             <MenuItem title="All catagory" />
           </OverflowMenu>
         </Layout>
