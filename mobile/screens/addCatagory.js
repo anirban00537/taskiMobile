@@ -9,15 +9,20 @@ import {
   TopNavigationAction,
 } from '@ui-kitten/components';
 import {StyleSheet, Text} from 'react-native';
+import AddCatagoryModal from '../components/modals/addCatagory';
 const addCatagory = ({navigation}) => {
+  const [visible, setVisible] = React.useState(false);
   const BackIcon = props => <Icon {...props} name="arrow-back" />;
   const AddIcon = props => <Icon {...props} name="plus-outline" />;
   const renderBackAction = () => (
     <TopNavigationAction onPress={() => navigation.goBack()} icon={BackIcon} />
   );
-  const renderAddAction = () => <TopNavigationAction icon={AddIcon} />;
+  const renderAddAction = () => (
+    <TopNavigationAction icon={AddIcon} onPress={() => setVisible(true)} />
+  );
   return (
     <Layout style={styles.container}>
+      <AddCatagoryModal visible={visible} setVisible={setVisible} />
       <TopNavigation
         alignment="center"
         title="Add Catagory"
