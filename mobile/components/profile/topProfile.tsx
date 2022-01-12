@@ -5,7 +5,7 @@ import {Layout, Text} from '@ui-kitten/components';
 const topProfile = () => {
   return (
     <Layout>
-      <View style={styles.container}>
+      <View>
         <View style={styles.imageContainer}>
           <Image
             style={styles.image}
