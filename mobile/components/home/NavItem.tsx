@@ -2,7 +2,11 @@ import {Icon, Button} from '@ui-kitten/components';
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 
-const NavItem = ({title}) => {
+type Props = {
+  title: string;
+};
+
+const NavItem = ({title}: Props) => {
   return (
     <TouchableOpacity style={styles.button}>
       <Icon
