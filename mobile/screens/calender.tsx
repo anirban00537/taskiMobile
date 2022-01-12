@@ -3,7 +3,10 @@ import {Layout, Text, Calendar} from '@ui-kitten/components';
 
 import {StyleSheet, ScrollView} from 'react-native';
 import Card from '../components/home/card';
-const calender = ({navigation}) => {
+type Props = {
+  navigation: any;
+};
+const calender = ({navigation}: Props) => {
   const [date, setDate] = React.useState(new Date());
 
   return (

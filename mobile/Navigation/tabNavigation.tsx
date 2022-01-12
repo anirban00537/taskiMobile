@@ -38,8 +38,12 @@ const TabNavigator = () => (
     />
   </Navigator>
 );
+type Props = {
+  navigation: any;
+  state: any;
+};
 
-const BottomTabBar = ({navigation, state}) => {
+const BottomTabBar = ({navigation, state}: Props) => {
   const onSelect = index => {
     navigation.navigate(state.routeNames[index]);
   };

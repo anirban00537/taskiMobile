@@ -8,12 +8,18 @@ import {
   TopNavigation,
   TopNavigationAction,
 } from '@ui-kitten/components';
-import {StyleSheet, Text} from 'react-native';
+// eslint-disable-next-line prettier/prettier
+import {StyleSheet} from 'react-native';
 import AddCatagoryModal from '../components/modals/addCatagory';
-const addCatagory = ({navigation}) => {
+
+type Props = {
+  navigation: any;
+};
+
+const addCatagory = ({navigation}: Props) => {
   const [visible, setVisible] = React.useState(false);
-  const BackIcon = props => <Icon {...props} name="arrow-back" />;
-  const AddIcon = props => <Icon {...props} name="plus-outline" />;
+  const BackIcon = (props: any) => <Icon {...props} name="arrow-back" />;
+  const AddIcon = (props: any) => <Icon {...props} name="plus-outline" />;
   const renderBackAction = () => (
     <TopNavigationAction onPress={() => navigation.goBack()} icon={BackIcon} />
   );
@@ -34,10 +40,7 @@ const addCatagory = ({navigation}) => {
         style={styles.list}
         data={[{title: 'Add Catagory'}, {title: 'All Catagory'}]}
         renderItem={({item}) => (
-          <ListItem
-            title={item.title}
-            onPress={() => alert(`${item.title} pressed`)}
-          />
+          <ListItem title={item.title} onPress={() => console.log('Pressed')} />
         )}
       />
     </Layout>

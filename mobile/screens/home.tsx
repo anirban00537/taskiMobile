@@ -9,11 +9,13 @@ import {
 } from '@ui-kitten/components';
 import Card from '../components/home/card';
 import NavItem from '../components/home/NavItem';
-
-const home = ({navigation}) => {
-  const [selectedIndex, setSelectedIndex] = React.useState(null);
+type Props = {
+  navigation: any;
+};
+const home = ({navigation}: Props) => {
+  const [selectedIndex, setSelectedIndex] = React.useState<any>(null);
   const [visible, setVisible] = React.useState(false);
-  const onItemSelect = index => {
+  const onItemSelect = (index: any) => {
     setSelectedIndex(index);
     setVisible(false);
   };

@@ -2,7 +2,11 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Card, Layout, Text} from '@ui-kitten/components';
 
-const details = ({navigation}) => {
+type Props = {
+  navigation: any;
+};
+
+const details = ({navigation}: Props) => {
   return (
     <Layout style={styles.topContainer}>
       <Card style={styles.card}>
@@ -54,7 +58,6 @@ const styles = StyleSheet.create({
   },
   detaile: {
     fontSize: 12,
-    marginVertical: 2,
     color: '#747d8c',
     marginHorizontal: 2,
     marginVertical: 9,
