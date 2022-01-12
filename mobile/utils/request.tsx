@@ -2,7 +2,7 @@ import axios from 'axios';
 
 axios.defaults.baseURL = 'http://192.168.0.108:3000';
 
-axios.interceptors.request.use(config => {
+axios.interceptors.request.use((config: any) => {
   config.headers.Authorization = '';
   return config;
 });
