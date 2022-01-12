@@ -2,16 +2,20 @@ import React from 'react';
 import {StyleSheet, View} from 'react-native';
 import {Button, Card, Modal, Input, Text, Layout} from '@ui-kitten/components';
 
-const AddCatagoryModal = ({visible, setVisible}) => {
+type Props = {
+  visible: boolean;
+  setVisible: any;
+};
+
+const AddCatagoryModal = ({visible, setVisible}: Props) => {
   return (
     <Layout style={styles.container}>
       <Modal
         visible={visible}
         backdropStyle={styles.backdrop}
         onBackdropPress={() => setVisible(false)}>
-        <Card styles={styles.card}>
+        <Card style={styles.card}>
           <Input placeholder="Catagory Name" style={styles.input} />
-
           <Button onPress={() => setVisible(false)}>Add a catagory</Button>
         </Card>
       </Modal>
