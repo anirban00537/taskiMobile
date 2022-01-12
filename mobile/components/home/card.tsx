@@ -1,13 +1,19 @@
 import React, {useState} from 'react';
 import {StyleSheet, View, TouchableOpacity} from 'react-native';
-import {Icon, Card, Text} from '@ui-kitten/components';
+import {Icon, Card, Text, Radio} from '@ui-kitten/components';
 
-const card = ({navigation, index}) => {
+type Props = {
+  navigation: any;
+  index: number;
+};
+
+const card = ({navigation, index}: Props) => {
   const textJson = {
     title: 'This is a title',
     description:
       'loream ipsum dolor sit amet, consectetur adipiscing elit, sed doeiusmod tempor incididunt ut labore et dolore magna aliqua.',
   };
+  const [checked, setChecked] = useState(false);
 
   const renderTenWords = () => {
     const words = textJson.description.split(' ');
@@ -38,6 +44,9 @@ const card = ({navigation, index}) => {
             fill={'#a4b0be '}
           />
         </View>
+        <Radio
+          checked={checked}
+          onChange={nextChecked => setChecked(nextChecked)}></Radio>
       </View>
     </TouchableOpacity>
   );
