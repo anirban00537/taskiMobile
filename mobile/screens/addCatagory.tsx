@@ -8,7 +8,7 @@ import {
   TopNavigation,
   TopNavigationAction,
 } from '@ui-kitten/components';
-// eslint-disable-next-line prettier/prettier
+
 import {StyleSheet} from 'react-native';
 import AddCatagoryModal from '../components/modals/addCatagory';
 
